@@ -6,16 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio</title>
     <link href="{% static 'style.css' %}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="{% static 'main.js' %}"></script>
 </head>
 <body>
-<header>
-    <nav></nav>
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav_logo">Hamza</a>
+        <div class="nav_menu" id="nav-menu">
+            <ul class="nav_list grid">
+                <li class="nav_item">
+                    <a href="#" class="nav_link">
+                        <i class="uil uil-estate nav_icon"></i> Home
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">
+                        <i class="uil uil-user nav_icon"></i> About
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">
+                        <i class="uil uil-file nav_icon"></i> Skills
+                    </a>
+                </li>
+
+                <li class="nav_item">
+                    <a href="#" class="nav_link">
+                        <i class="uil uil-graduation-cap nav_icon"></i> Education
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">
+                        <i class="uil uil-briefcase-alt nav_icon"></i> Experience
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav_link">
+                        <i class="uil uil-notebooks nav_icon"></i> Projects
+                    </a>
+                </li>
+            </ul>
+            <i class="uil uil-multiply" id="nav-close"></i>
+
+        </div>
+        <div class="nav_btns">
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="uil uil-apps"></i>
+            </div>
+        </div>
+    </nav>
 </header>
 <main>
-
 </main>
 
 </body>

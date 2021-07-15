@@ -1,4 +1,5 @@
 :root {
+    --header-height: 3rem;
     /*Font Size*/
     --big-font: 2rem;
     --h1-font: 1.5rem;
@@ -29,7 +30,6 @@
 /*Font size for large devices*/
 @media screen and(min-width: 968px) {
     :root {
-        --header-height: 3rem;
         --big-font: 3rem;
         --h1-font: 2.25rem;
         --h2-font: 1.5rem;
@@ -52,8 +52,6 @@ body {
     margin: 0 0 var(--header-height);
     font-family: sans-serif;
     font-size: 30px;
-    background-color: white;
-    color: black;
 }
 
 h1, h2, h3, h4 {
@@ -91,13 +89,101 @@ img {
 }
 
 /*=========Containers============*/
-.container{
+.container {
     max-width: 768px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
 }
 
-.grid{
+.grid {
     display: grid;
     gap: 1.5rem;
+}
+
+.header {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: var(--z-fixed);
+}
+
+/*===========Navigation===========*/
+.nav {
+    max-width: 968px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_log, .nav_toggle {
+    font-weight: var(--font-medium);
+}
+
+.nav_log:hover {
+    color: black;
+}
+
+.nav_toggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.nav_toggle:hover {
+    color: red;
+}
+
+@media screen and (max-width: 767px) {
+    .nav_menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+}
+
+.nav_list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nav_link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font);
+    font-weight: var(--font-medium);
+}
+
+.nav_link:hover{
+    color: black;
+}
+.nav_icon{
+    font-size: 1.2rem;
+}
+
+#nav-close{
+    position: absolute;
+    right: 1.3rem;
+    bottom: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#nav-close:hover{
+    color: red;
+}
+
+.show_menu{
+    bottom: 0;
+}
+
+.hide_menu{
+    bottom: -100%;
 }
