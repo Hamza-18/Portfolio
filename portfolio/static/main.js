@@ -14,12 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     navIcon.forEach(icon => icon.onclick = () => hideMenu())
 
     const skillHeader = document.querySelectorAll(".skill_content")
-    skillHeader.forEach(header => header.addEventListener('click',() => {
-        header.classList.contains("skill_open")?header.classList.replace("skill_open","skill_close"):
-            header.classList.replace("skill_close","skill_open")
+    skillHeader.forEach(header => header.addEventListener('click', () => {
+        header.classList.contains("skill_open") ? header.classList.replace("skill_open", "skill_close") :
+            header.classList.replace("skill_close", "skill_open")
+    }))
+
+    const serviceBtn = document.querySelectorAll(".services_button"),
+        models = document.querySelectorAll(".services_model"),
+        modelCloseBtn = document.querySelectorAll(".services_model-close")
+    serviceBtn.forEach((btn,i) => btn.addEventListener('click', () => {
+        models[i].classList.add("show_model")
+    }))
+    modelCloseBtn.forEach(btn => btn.addEventListener('click',() =>{
+        models.forEach(model => model.classList.remove("show_model"))
     }))
 });
-
-function changeSkillListAppearance(header){
-
-}

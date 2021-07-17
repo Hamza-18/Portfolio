@@ -29,8 +29,8 @@
 
     /*z index*/
     --z-tooltip: 10;
-    --z-fized: 100;
-    --z-fixed: 1000;
+    --z-fixed: 100;
+    --z-model: 1000;
 
     /*    color*/
     --hover-color: #0f6066;;
@@ -69,6 +69,7 @@ body {
 
 h1, h2, h3, h4 {
     font-weight: var(--font-semi-bold);
+
 }
 
 ul {
@@ -214,6 +215,7 @@ img {
     bottom: -100%;
 }
 
+/*=========Buttons=========*/
 .button {
     display: inline-block;
     padding: 1rem;
@@ -222,6 +224,25 @@ img {
     font-weight: var(--font-medium);
     background-color: var(--hover-color);
     color: white;
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
+}
+
+.button_small {
+    padding: 0.75rem 1rem;
+}
+
+.button_link {
+    background-color: transparent;
+    color: var(--hover-color);
+    padding: 0;
+}
+
+.button_link:hover {
+    color: #122c3b;
 }
 
 /*==========Home===========*/
@@ -279,10 +300,6 @@ img {
     margin-bottom: var(--mb-2);
 }
 
-.home_scroll {
-
-}
-
 .home_scroll-button {
     color: var(--hover-color);
     transition: .3s;
@@ -290,12 +307,9 @@ img {
 
 .home_scroll-name {
     font-size: var(--small-font);
+    color: var(--secondary-color);
 }
 
-.button--flex {
-    display: inline-flex;
-    align-items: center;
-}
 
 /*==============Skills===============*/
 .skills_container {
@@ -335,13 +349,16 @@ img {
     padding-left: 2.5rem;
     margin-bottom: var(--mb-2);
 }
-.skill_open .skills_list{
+
+.skill_open .skills_list {
     height: auto;
 }
-.skill_close .skills_list{
+
+.skill_close .skills_list {
     height: 0;
     overflow: hidden;
 }
+
 /*individual skill*/
 .skills_titles {
     display: flex;
@@ -357,9 +374,10 @@ img {
     background-color: var(--secondary-color);
 }
 
-.skill_open .skills_arrow{
+.skill_open .skills_arrow {
     transform: rotate(-180deg);
 }
+
 .skill_bar-percentage {
     display: block;
     background-color: #0f6066;
@@ -368,7 +386,103 @@ img {
 .skill_html {
     width: 90%;
 }
+
 /*===========Services=====================*/
+.services_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.services_content {
+    background-color: #02191d;
+    align-items: center;
+    position: relative;
+    padding: 3.5rem .5rem 1.25rem 1.5rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 4px rgba(2, 25, 29, 0.8);
+    transition: 0.3s;
+}
+
+.service_icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: var(--mb-1);
+    color: var(--hover-color);
+}
+
+.services_title {
+    font-size: var(--h3-font);
+    margin-bottom: var(--mb-1);
+    font-weight: var(--font-medium);
+}
+
+.services_content:hover {
+    box-shadow: 0 4px 8px rgba(2, 25, 29, 0.8);
+}
+
+
+.services_button {
+    cursor: pointer;
+    font-size: var(--small-font);
+}
+
+.services_button:hover .button_icon {
+    transform: translateX(0.25rem)
+}
+
+.services_model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: var(--z-model);
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.show_model {
+    opacity: 100;
+    visibility: visible;
+}
+
+.services_model-content {
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #243f45;
+    color: white;
+    /*background-color: #4e7297;*/
+}
+
+.services_model-service {
+    row-gap: 1.5rem;
+    display: flex;
+}
+
+.services_model-title {
+    font-size: var(--h3-font);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.services_model-close {
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    cursor: pointer;
+}
+
+.services_model-close:hover {
+    color: #4b4949;
+}
 
 @media screen and (min-width: 768px) {
     .container {
@@ -400,8 +514,8 @@ img {
         margin-left: auto;
     }
 
-    .skills_container{
-        grid-template-columns: repeat(2,1fr);
+    .skills_container {
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 
