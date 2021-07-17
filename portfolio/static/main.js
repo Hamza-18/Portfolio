@@ -12,4 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navIcon = document.querySelectorAll(".nav_item")
     navIcon.forEach(icon => icon.onclick = () => hideMenu())
+
+    const skillHeader = document.querySelectorAll(".skill_content")
+    skillHeader.forEach(header => header.addEventListener('click',() => {
+        header.classList.contains("skill_open")?header.classList.replace("skill_open","skill_close"):
+            header.classList.replace("skill_close","skill_open")
+    }))
 });
+
+function changeSkillListAppearance(header){
+
+}
