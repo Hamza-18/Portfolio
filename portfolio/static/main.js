@@ -12,20 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navIcon = document.querySelectorAll(".nav_item")
     navIcon.forEach(icon => icon.onclick = () => hideMenu())
-
+    /*=========Skills==================*/
     const skillHeader = document.querySelectorAll(".skill_content")
     skillHeader.forEach(header => header.addEventListener('click', () => {
         header.classList.contains("skill_open") ? header.classList.replace("skill_open", "skill_close") :
             header.classList.replace("skill_close", "skill_open")
     }))
-
+    /*=========Services===============*/
     const serviceBtn = document.querySelectorAll(".services_button"),
         models = document.querySelectorAll(".services_model"),
         modelCloseBtn = document.querySelectorAll(".services_model-close")
-    serviceBtn.forEach((btn,i) => btn.addEventListener('click', () => {
+    serviceBtn.forEach((btn, i) => btn.addEventListener('click', () => {
         models[i].classList.add("show_model")
     }))
-    modelCloseBtn.forEach(btn => btn.addEventListener('click',() =>{
+    modelCloseBtn.forEach(btn => btn.addEventListener('click', () => {
         models.forEach(model => model.classList.remove("show_model"))
     }))
+    /*============Projects======================*/
+    const swiper = new Swiper('.projects_container', {
+        cssMode: true,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+    });
+
 });

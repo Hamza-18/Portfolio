@@ -5,8 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Portfolio</title>
-        <link href="{% static 'style.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <link href="{% static 'style.css' %}" rel="stylesheet">
+
         <script src="{% static 'main.js' %}"></script>
     </head>
     <body>
@@ -32,13 +35,18 @@
                         </li>
 
                         <li class="nav_item">
-                            <a href="#Services" class="nav_link">
+                            <a href="#services" class="nav_link">
                                 <i class="uil uil-briefcase-alt nav_icon"></i> Services
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#" class="nav_link">
+                            <a href="#projects" class="nav_link">
                                 <i class="uil uil-notebooks nav_icon"></i> Projects
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#contact me" class="nav_link">
+                                <i class="uil uil-message nav_icon"></i> Contact me
                             </a>
                         </li>
                     </ul>
@@ -89,7 +97,7 @@
                                 technologies
                                 such as Flutter, Android, Django etc.
                             </p>
-                            <a href="#" class="button button--flex">
+                            <a href="#contact me" class="button button--flex">
                                 Contact Me <i class="uil uil-message button_icon"></i>
                             </a>
                         </div>
@@ -280,7 +288,7 @@
                                         <i class="uil uil-check-circle services_model-icon"></i>
                                         <p>I will develop Java swing app</p>
                                     </li>
-                                     <li class="services_model-service">
+                                    <li class="services_model-service">
                                         <i class="uil uil-check-circle services_model-icon"></i>
                                         <p>I will provide JAR and EXE file</p>
                                     </li>
@@ -321,8 +329,125 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--================= Service 3 ===================-->
+
+                    <div class="services_content">
+                        <div>
+                            <i class="uil uil-brackets-curly service_icon"></i>
+                            <h3 class="services_title">Game<br>Development</h3>
+
+                        </div>
+                        <span class="button button--flex button_small button_link services_button">
+                            View more<i class="uil uil-arrow-right button_icon"></i>
+                        </span>
+
+                        <div class="services_model">
+                            <div class="services_model-content">
+                                <h4 class="services_model-title">Game Development </h4>
+                                <i class="uil uil-times services_model-close"></i>
+                                <ul class="services_model-services grid">
+                                    <li class="services_model-service">
+                                        <i class="uil uil-check-circle services_model-icon"></i>
+                                        <p>I will develop 3d/2d game using Untiy</p>
+                                    </li>
+                                    <li class="services_model-service">
+                                        <i class="uil uil-check-circle services_model-icon"></i>
+                                        <p>I will do C# scripting </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+            </section>
+            <!-- ==============Projects================= -->
+            <section class="projects section" id="projects">
+                <h2 class="section_title">Projects</h2>
+                <span class="section_subtitle">Recent work</span>
+                <div class="projects_container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- ===============project 1================== -->
+                        <div class="projects_content grid swiper-slide">
+                            <img class="projects_content-img"
+                                 src="{% static 'main_app.png' %}">
+                            <div class="portfolio_data">
+                                <h3 class="projects_content-title">Native Android App</h3>
+                                <p class="projects_content-description"> Built using Java in Andorid Studio. Compatible
+                                    with
+                                    all devices and has a responsive UI according to the screen size</p>
+                                <a class="button button--flex button_small projects_btn">View more
+                                    <i class="uil uil-arrow-right button_icon"></i></a>
+                            </div>
+                        </div>
+                        <!-- ===============project 2================== -->
+                        <div class="projects_content grid swiper-slide">
+                            <img class="projects_content-img"
+                                 src="{% static 'main_app.png' %}">
+                            <div class="portfolio_data">
+                                <h3 class="projects_contet-title">Native Android App</h3>
+                                <p class="projects_content-description"> Built using Java in Andorid Studio. Compatible
+                                    with
+                                    all devices and has a responsive UI according to the screen size</p>
+                            </div>
+                        </div>
+                        <!-- ===============project 3================== -->
+                        <div class="projects_content grid swiper-slide">
+                            <img class="projects_content-img"
+                                 src="{% static 'main_app.png' %}">
+                            <div class="portfolio_data">
+                                <h3 class="projects_contet-title">Native Android App</h3>
+                                <p class="projects_content-description"> Built using Java in Andorid Studio. Compatible
+                                    with
+                                    all devices and has a responsive UI according to the screen size</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="uil uil-angle-right-b swiper_btn"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="uil uil-angle-left-b swiper_btn"></i>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination" style="color: red;"></div>
+
+                </div>
+            </section>
+
+            <!-- ===========Contact me=========== -->
+            <section class="contact section" id="contact me">
+                <h2 class="section_title"> Contact me</h2>
+                <span class="section_subtitle">Get in touch</span>
+                <div class="contact_container container grid">
+                    <div class="contact_content grid">
+                        <div>
+                            <div class="contact_content-info">
+                                <i class="uil uil-phone contact_icon"></i>
+                                <div class="content-info ">
+                                    <h3 class="contact_title">Call Me</h3>
+                                    <span class="contact_subtitle">+92 3330455468</span>
+                                </div>
+                            </div>
+                           <div class="contact_content-info">
+                                <i class="uil uil-envelope-minus contact_icon"></i>
+                                <div class="content-info">
+                                    <h3 class="contact_title">Email Me</h3>
+                                    <span class="contact_subtitle">hamzabashir1022@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="contact_content-info">
+                                <i class="uil uil-location-point contact_icon"></i>
+                                <div class="content-info">
+                                    <h3 class="contact_title">Location</h3>
+                                    <span class="contact_subtitle">Lahore, Pakistan</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
