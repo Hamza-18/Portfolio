@@ -116,120 +116,33 @@
                 <h2 class="section_title">Skills</h2>
                 <span class="section_subtitle">My technical level</span>
                 <div class="skills_container container grid">
-                    <div>
-                        <!-- ===================skill 1======================= -->
-                        <div class="skill_content skill_open">
-                            <div class="skills_header">
-                                <i class="uil uil-brackets-curly skills_icon"></i>
-                                <div>
-                                    <h1 class="skills_title">Frontend Developer</h1>
+                    {% for skill in skills %}
+                        <div>
+                            <!-- ===================skill 1======================= -->
+                            <div class="skill_content {{ skill.open }}">
+                                <div class="skills_header">
+                                    <i class= "{{ skill.getIcon }} skills_icon"></i>
+                                    <div>
+                                        <h1 class="skills_title">{{ skill.getHeader }}</h1>
+                                    </div>
+                                    <i class="uil uil-angle-down skills_arrow open"></i>
                                 </div>
-                                <i class="uil uil-angle-down skills_arrow open"></i>
-                            </div>
-                            <div class="skills_list grid">
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">HTML</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage skill_html"></span>
-                                    </div>
-                                </div>
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">CSS</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage"></span>
-                                    </div>
-                                </div>
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">JavaScript</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage"></span>
-                                    </div>
-                                </div>
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">React</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage"></span>
-                                    </div>
+                                <div class="skills_list grid">
+                                    {% for each_skill in skill.getSkills %}
+                                        <div class="skills_data">
+                                            <div class="skills_titles">
+                                                <div class="skills_name">{{ each_skill.getName }}</div>
+                                                <span class="skills_number">{{ each_skill.getLevel  }}</span>
+                                            </div>
+                                            <div class="skills_bar">
+                                                <span class="skill_bar-percentage {{ each_skill.getLevel }}"></span>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <!-- ===================skill 2======================= -->
-                        <div class="skill_content skill_close">
-                            <div class="skills_header">
-                                <i class="uil uil-brackets-curly skills_icon"></i>
-                                <div>
-                                    <h1 class="skills_title">Backend Developer</h1>
-                                </div>
-                                <i class="uil uil-angle-down skills_arrow close"></i>
-                            </div>
-                            <div class="skills_list grid">
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">Django</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage skill_html"></span>
-                                    </div>
-                                </div>
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">SQL</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <!-- ===================skill 3======================= -->
-                        <div class="skill_content skill_close">
-                            <div class="skills_header">
-                                <i class="uil uil-brackets-curly skills_icon"></i>
-                                <div>
-                                    <h1 class="skills_title">Desktop Developer</h1>
-                                </div>
-                                <i class="uil uil-angle-down skills_arrow close"></i>
-                            </div>
-                            <div class="skills_list grid">
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">Java Swing</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage skill_html"></span>
-                                    </div>
-                                </div>
-                                <div class="skills_data">
-                                    <div class="skills_titles">
-                                        <div class="skills_name">SQL</div>
-                                        <span class="skills_number">90%</span>
-                                    </div>
-                                    <div class="skills_bar">
-                                        <span class="skill_bar-percentage"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </section>
             <!-- =============Services=============== -->
@@ -430,7 +343,7 @@
                                     <span class="contact_subtitle">+92 3330455468</span>
                                 </div>
                             </div>
-                           <div class="contact_content-info">
+                            <div class="contact_content-info">
                                 <i class="uil uil-envelope-minus contact_icon"></i>
                                 <div class="content-info">
                                     <h3 class="contact_title">Email Me</h3>
