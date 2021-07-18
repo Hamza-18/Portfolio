@@ -128,14 +128,13 @@
                                     <i class="uil uil-angle-down skills_arrow open"></i>
                                 </div>
                                 <div class="skills_list grid">
-                                    {% for each_skill in skill.getSkills %}
+                                    {% for name in skill.getSkills %}
                                         <div class="skills_data">
                                             <div class="skills_titles">
-                                                <div class="skills_name">{{ each_skill.getName }}</div>
-                                                <span class="skills_number">{{ each_skill.getLevel  }}</span>
+                                                <div class="skills_name">{{ name }}</div>
                                             </div>
-                                            <div class="skills_bar">
-                                                <span class="skill_bar-percentage {{ each_skill.getLevel }}"></span>
+                                            <div class="skills_bar" >
+                                                <span class="skill_bar-percentage " ></span>
                                             </div>
                                         </div>
                                     {% endfor %}

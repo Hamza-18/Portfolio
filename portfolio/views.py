@@ -18,27 +18,29 @@ class SkillSection:
     def getSkills(self):
         return self.skills
 
-
-class Skill:
-    def __init__(self, name, level):
-        self.name = name
-        self.level = level
-
-    def getLevel(self):
-        return self.level
-
-    def getName(self):
-        return self.name
-
-
 def create_skills_section():
     # Frontend
-    front_end_skills = [Skill("HTML", 90, ), Skill("CSS", 90), Skill("Javascript", 90), Skill("React", 90)]
+    front_end_skills = ["HTML","CSS", "Javascript","React"]
     front_end = SkillSection("Frontend Developer", "uil uil-brackets-curly skills_icon", front_end_skills, "skill_open")
     # backend skills
-    backend_skills = [Skill("Django", 90, ), Skill("SQL", 90), Skill("Java", 90)]
+    backend_skills = ["Django","SQL", "Java","Firebase"]
     back_end = SkillSection("Backend Developer", "uil uil-server", backend_skills, "skill_close")
-    return [front_end,back_end]
+    # Desktop development
+    desktop_skills = ["Java Swing", "SQL"]
+    desktop = SkillSection("Desktop Development", "uil uil-desktop", desktop_skills, "skill_close")
+    # Mobile Development
+    mobile_skills = ["Android", "Flutter", "Java", "Firebase"]
+    mobile = SkillSection("Application Development", "uil uil-mobile-android", mobile_skills, "skill_close")
+
+    # game development
+    game_skills = ["Unity", "C#"]
+    game = SkillSection("Game Development", "uil uil-icons", game_skills, "skill_close")
+
+    # programming languages
+    language_skills = ["Python", "Java", "C#", "Javascript", "Dart", "Haskell", "Assembly Language"]
+    programming = SkillSection("Programming Languages", "uil uil-java-script", language_skills, "skill_close")
+    return [front_end, back_end, desktop, mobile, game, programming]
+
 
 my_skills = create_skills_section()
 
