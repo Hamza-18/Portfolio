@@ -118,10 +118,10 @@
                 <div class="skills_container container grid">
                     {% for skill in skills %}
                         <div>
-                            <!-- ===================skill 1======================= -->
+                            <!-- ===================skill ======================= -->
                             <div class="skill_content {{ skill.open }}">
                                 <div class="skills_header">
-                                    <i class= "{{ skill.getIcon }} skills_icon"></i>
+                                    <i class="{{ skill.getIcon }} skills_icon"></i>
                                     <div>
                                         <h1 class="skills_title">{{ skill.getHeader }}</h1>
                                     </div>
@@ -133,8 +133,8 @@
                                             <div class="skills_titles">
                                                 <div class="skills_name">{{ name }}</div>
                                             </div>
-                                            <div class="skills_bar" >
-                                                <span class="skill_bar-percentage " ></span>
+                                            <div class="skills_bar">
+                                                <span class="skill_bar-percentage "></span>
                                             </div>
                                         </div>
                                     {% endfor %}
@@ -149,130 +149,39 @@
                 <h2 class="section_title">Services</h2>
                 <span class="section_subtitle">What I offer</span>
                 <div class="services_container container grid">
-                    <!--================= Service 1 ===================-->
+                    <!--================= Service  ===================-->
+                    {% for service in services %}
+                        <div class="services_content">
+                            <div>
+                                <i class="{{ service.icon }} service_icon"></i>
+                                <h3 class="services_title">{{ service.get_heading }}
+                                    <br>{{ service.get_sub_heading }}
+                                </h3>
 
-                    <div class="services_content">
-                        <div>
-                            <i class="uil uil-android service_icon"></i>
-                            <h3 class="services_title">Android <br>Development</h3>
-
-                        </div>
-                        <span class="button button--flex button_small button_link services_button">
+                            </div>
+                            <span class="button button--flex button_small button_link services_button">
                             View more<i class="uil uil-arrow-right button_icon"></i>
                         </span>
 
-                        <div class="services_model">
-                            <div class="services_model-content">
-                                <h4 class="services_model-title">Android Application </h4>
-                                <i class="uil uil-times services_model-close"></i>
-                                <ul class="services_model-services grid">
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will develop native app</p>
-                                    </li>
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I provide complete backend for the app</p>
-                                    </li>
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I connect database if required such as firebase and SQL</p>
-                                    </li>
-                                </ul>
+                            <div class="services_model">
+                                <div class="services_model-content">
+                                    <h4 class="services_model-title">
+                                        {{ service.get_heading }} {{ service.get_sub_heading }} </h4>
+                                    <i class="uil uil-times services_model-close"></i>
+                                    <ul class="services_model-services grid">
+                                        {% for each_service in service.get_services %}
+                                            <li class="services_model-service">
+                                                <i class="uil uil-check-circle services_model-icon"></i>
+                                                <p>{{ each_service }}</p>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--================= Service 2 ===================-->
-                    <div class="services_content">
-                        <div>
-                            <i class="uil uil-desktop service_icon"></i>
-                            <h3 class="services_title">Desktop<br> Development</h3>
-                        </div>
-                        <span class="button button--flex button_small button_link services_button">
-                            View more<i class="uil uil-arrow-right button_icon"></i>
-                        </span>
-                        <div class="services_model">
-                            <div class="services_model-content">
-                                <h4 class="services_model-title">Desktop Application </h4>
-                                <i class="uil uil-times services_model-close"></i>
-                                <ul class="services_model-services grid">
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will develop Java swing app</p>
-                                    </li>
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will provide JAR and EXE file</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--================= Service 3 ===================-->
+                    {% endfor %}
 
-                    <div class="services_content">
-                        <div>
-                            <i class="uil uil-brackets-curly service_icon"></i>
-                            <h3 class="services_title">Web<br>Development</h3>
-
-                        </div>
-                        <span class="button button--flex button_small button_link services_button">
-                            View more<i class="uil uil-arrow-right button_icon"></i>
-                        </span>
-
-                        <div class="services_model">
-                            <div class="services_model-content">
-                                <h4 class="services_model-title">Android Application </h4>
-                                <i class="uil uil-times services_model-close"></i>
-                                <ul class="services_model-services grid">
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will develop user interface using HTML, CSS and Javascript</p>
-                                    </li>
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will do server side scripting using python Django</p>
-                                    </li>
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will develop dynamic user interface using React</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--================= Service 3 ===================-->
-
-                    <div class="services_content">
-                        <div>
-                            <i class="uil uil-brackets-curly service_icon"></i>
-                            <h3 class="services_title">Game<br>Development</h3>
-
-                        </div>
-                        <span class="button button--flex button_small button_link services_button">
-                            View more<i class="uil uil-arrow-right button_icon"></i>
-                        </span>
-
-                        <div class="services_model">
-                            <div class="services_model-content">
-                                <h4 class="services_model-title">Game Development </h4>
-                                <i class="uil uil-times services_model-close"></i>
-                                <ul class="services_model-services grid">
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will develop 3d/2d game using Untiy</p>
-                                    </li>
-                                    <li class="services_model-service">
-                                        <i class="uil uil-check-circle services_model-icon"></i>
-                                        <p>I will do C# scripting </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
             </section>
             <!-- ==============Projects================= -->
             <section class="projects section" id="projects">

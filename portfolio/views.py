@@ -18,12 +18,33 @@ class SkillSection:
     def getSkills(self):
         return self.skills
 
+
+class Service:
+    def __init__(self, heading, sub_heading, icon, services):
+        self.icon = icon
+        self.heading = heading
+        self.sub_heading = sub_heading
+        self.services = services
+
+    def get_icon(self):
+        return self.icon
+
+    def get_heading(self):
+        return self.heading
+
+    def get_sub_heading(self):
+        return self.sub_heading
+
+    def get_services(self):
+        return self.services
+
+
 def create_skills_section():
     # Frontend
-    front_end_skills = ["HTML","CSS", "Javascript","React"]
+    front_end_skills = ["HTML", "CSS", "Javascript", "React"]
     front_end = SkillSection("Frontend Developer", "uil uil-brackets-curly skills_icon", front_end_skills, "skill_open")
     # backend skills
-    backend_skills = ["Django","SQL", "Java","Firebase"]
+    backend_skills = ["Django", "SQL", "Java", "Firebase"]
     back_end = SkillSection("Backend Developer", "uil uil-server", backend_skills, "skill_close")
     # Desktop development
     desktop_skills = ["Java Swing", "SQL"]
@@ -42,10 +63,35 @@ def create_skills_section():
     return [front_end, back_end, desktop, mobile, game, programming]
 
 
-my_skills = create_skills_section()
+def create_services():
+    android_services = ["APK file of the application",
+                        "Responsive UI for different devices",
+                        "Source code if in contract",
+                        "Submission on Play Store if required",]
+    android_application = Service("Android", "Application", "uil uil-android service_icon",
+                                  android_services)
 
+    desktop_services = ["I will provide .exe or JAR file according to your requirements ",
+                        "Responsive UI for different screen size",
+                        "Database connectivity"]
+    desktop_application = Service("Desktop","Application","uil uil-desktop service_icon", desktop_services)
+
+    web_services = ["Responsive UI for different devices",
+                    "Server side configuration",
+                    "Database connectivity"]
+    web_application = Service("Web","Application","uil uil-brackets-curly service_icon", web_services)
+
+    game_service = ["3D/2D game built in Unity",
+                    "Android apk file or IOS equivalent",
+                    "Submission on play store if required"]
+    game_development = Service("Game","Development", "uil uil-icons", game_service)
+    return [android_application, desktop_application, web_application, game_development]
+
+my_skills = create_skills_section()
+my_services = create_services()
 
 def index(request):
     return render(request, "portfolio/index.html", {
-        "skills": my_skills
+        "skills": my_skills,
+        "services": my_services
     })

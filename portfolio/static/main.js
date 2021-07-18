@@ -15,9 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     /*=========Skills==================*/
     const skillHeader = document.querySelectorAll(".skill_content")
     skillHeader.forEach(header => header.addEventListener('click', () => {
-        header.classList.contains("skill_open") ? header.classList.replace("skill_open", "skill_close") :
-            header.classList.replace("skill_close", "skill_open")
+        skillHeader.forEach(_header => header === _header ? openSkill(_header, true) : openSkill(_header, false))
     }))
+
+    function openSkill(header, bool) {
+        bool ? header.classList.contains("skill_open") ? header.classList.replace("skill_open", "skill_close") :
+            header.classList.replace("skill_close", "skill_open") :
+            header.classList.replace("skill_open", "skill_close")
+    }
+
     /*=========Services===============*/
     const serviceBtn = document.querySelectorAll(".services_button"),
         models = document.querySelectorAll(".services_model"),
@@ -40,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
             el: '.swiper-pagination',
             clickable: true
         },
+        mousewheel: true,
+        keyboard: true,
     });
 
 });
