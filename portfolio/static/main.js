@@ -49,5 +49,4 @@ document.addEventListener("DOMContentLoaded", () => {
         mousewheel: true,
         keyboard: true,
     });
-
 });

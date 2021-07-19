@@ -39,6 +39,30 @@ class Service:
         return self.services
 
 
+class Project:
+    def __init__(self, icon, heading, description, width, height):
+        self.icon = icon
+        self.heading = heading
+        self.description = description
+        self.width = width
+        self.height = height
+
+    def get_icon(self):
+        return self.icon
+
+    def get_heading(self):
+        return self.heading
+
+    def get_description(self):
+        return self.description
+
+    def get_width(self):
+        return self.width
+
+    def get_height(self):
+        return self.height
+
+
 def create_skills_section():
     # Frontend
     front_end_skills = ["HTML", "CSS", "Javascript", "React"]
@@ -67,31 +91,44 @@ def create_services():
     android_services = ["APK file of the application",
                         "Responsive UI for different devices",
                         "Source code if in contract",
-                        "Submission on Play Store if required",]
+                        "Submission on Play Store if required", ]
     android_application = Service("Android", "Application", "uil uil-android service_icon",
                                   android_services)
 
     desktop_services = ["I will provide .exe or JAR file according to your requirements ",
                         "Responsive UI for different screen size",
                         "Database connectivity"]
-    desktop_application = Service("Desktop","Application","uil uil-desktop service_icon", desktop_services)
+    desktop_application = Service("Desktop", "Application", "uil uil-desktop service_icon", desktop_services)
 
     web_services = ["Responsive UI for different devices",
                     "Server side configuration",
                     "Database connectivity"]
-    web_application = Service("Web","Application","uil uil-brackets-curly service_icon", web_services)
+    web_application = Service("Web", "Application", "uil uil-brackets-curly service_icon", web_services)
 
     game_service = ["3D/2D game built in Unity",
                     "Android apk file or IOS equivalent",
                     "Submission on play store if required"]
-    game_development = Service("Game","Development", "uil uil-icons", game_service)
+    game_development = Service("Game", "Development", "uil uil-icons", game_service)
     return [android_application, desktop_application, web_application, game_development]
+
+
+def create_projects():
+    cupshup = Project("/static/projects/cupshup.png", "Food Delivery App", "Native Android App built using Java", 200,
+                      200)
+    java_swing = Project("/static/projects/login.png", "Management System", "Java swing application built for windows",
+                         400, 400)
+    pong = Project("/static/projects/pong.png","Pong","Pong built using Typescript and rxjs library",300,300)
+    return [cupshup, java_swing, pong]
+
 
 my_skills = create_skills_section()
 my_services = create_services()
+my_projects = create_projects()
+
 
 def index(request):
     return render(request, "portfolio/index.html", {
         "skills": my_skills,
-        "services": my_services
+        "services": my_services,
+        "projects": my_projects
     })

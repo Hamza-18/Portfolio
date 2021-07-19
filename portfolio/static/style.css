@@ -156,6 +156,7 @@ img {
     color: var(--icon-color)
 }
 
+
 @media screen and (max-width: 767px) {
     .nav_menu {
         position: fixed;
@@ -190,7 +191,9 @@ img {
 .nav_link:hover {
     color: var(--icon-color);
 }
-
+.nav_active{
+    color: var(--icon-color);
+}
 .nav_icon {
     font-size: 1.2rem;
 }
@@ -313,7 +316,12 @@ img {
     color: var(--secondary-color);
 }
 
-
+.contact-me:hover .message_icon{
+    transform: translateX(0.25rem);
+}
+.home_scroll:hover .home_scroll_arrow{
+    transform: translateY(0.25rem);
+}
 /*==============Skills===============*/
 .skills_container {
     row-gap: 0;
@@ -499,8 +507,6 @@ img {
 }
 
 .projects_content-img {
-    width: 265px;
-    height: 265px;
     border: .5rem;
     justify-self: center;
 }
@@ -515,7 +521,7 @@ img {
     margin-bottom: var(--mb-0-75);
 }
 
-.projects_btn:hover > .button_icon {
+.projects_btn:hover .button_icon {
     transform: translateX(0.25rem);
 }
 
