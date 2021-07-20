@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <link href="{% static 'style.css' %}" rel="stylesheet">
+        <link href="{% static 'portfolio/style.css' %}" rel="stylesheet">
 
         <script src="{% static 'main.js' %}"></script>
     </head>
@@ -24,7 +24,7 @@
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="#" class="nav_link">
+                            <a href="#aboutme" class="nav_link" id="about_me">
                                 <i class="uil uil-user nav_icon"></i> About
                             </a>
                         </li>
@@ -111,6 +111,24 @@
                     </div>
                 </div>
             </section>
+            <!-- =============About me========================= -->
+            <section class="aboutme section" id="aboutme">
+                <h3 class="section_title">About me</h3>
+                <span class="section_subtitle">Who I am</span>
+                <div class="about_me container grid ">
+                    <div class="about_data">
+                        <p class="about_description">I am a software engineer studying at monash i dont know what to
+                            write but i know this i am
+                            good and i love programming</p>
+                        <a href="#contact me" class="button button--flex cv_button">
+                            Download CV<i class="uil uil-import cv_icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </section>
+
             <!-- ===================Skills======================= -->
             <section class="skills section" id="skills">
                 <h2 class="section_title">Skills</h2>
@@ -190,21 +208,24 @@
                 <div class="projects_container container swiper-container">
                     <div class="swiper-wrapper">
                         {% for project in projects %}
-                        <!-- ===============project 1================== -->
-                        <div class="projects_content grid swiper-slide">
-                            <img class="projects_content-img"
-                                 src="{{project.get_icon}}" width="{{ project.get_width }}" height="{{ project.get_height }}">
-                            <div class="portfolio_data">
-                                <h3 class="projects_content-title">{{ project.get_heading}}</h3>
-                                <p class="projects_content-description"> {{ project.get_description}}</p>
+                            <!-- ===============project 1================== -->
+                            <div class="projects_content grid swiper-slide">
+                                <img class="projects_content-img"
+                                     src="{{ project.get_icon }}" width="{{ project.get_width }}"
+                                     height="{{ project.get_height }}">
+                                <div class="portfolio_data">
+                                    <h3 class="projects_content-title">{{ project.get_heading }}</h3>
+                                    <p class="projects_content-description"> {{ project.get_description }}</p>
 
-                                <a class="button button--flex button_small projects_btn">
-                                    View more<i class="uil uil-arrow-right button_icon"></i>
-                                </a>
+                                    <a href="cupshup" class="button button--flex button_small projects_btn">
+                                        View more<i class="uil uil-arrow-right button_icon"></i>
+                                    </a>
+
+                                </div>
+                                <div>
+                                </div>
                             </div>
-                        </div>
                         {% endfor %}
-                        <!-- ===============project 2================== -->
                     </div>
                     <div class="swiper-button-next">
                         <i class="uil uil-angle-right-b swiper_btn"></i>

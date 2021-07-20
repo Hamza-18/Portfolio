@@ -132,3 +132,6 @@ def index(request):
         "services": my_services,
         "projects": my_projects
     })
+
+def project(request,proj_name):
+    return render(request,"portfolio/project.html")

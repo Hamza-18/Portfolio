@@ -191,9 +191,11 @@ img {
 .nav_link:hover {
     color: var(--icon-color);
 }
-.nav_active{
+
+.nav_active {
     color: var(--icon-color);
 }
+
 .nav_icon {
     font-size: 1.2rem;
 }
@@ -316,12 +318,27 @@ img {
     color: var(--secondary-color);
 }
 
-.contact-me:hover .message_icon{
+.contact-me:hover .message_icon {
     transform: translateX(0.25rem);
 }
-.home_scroll:hover .home_scroll_arrow{
+
+.home_scroll:hover .home_scroll_arrow {
     transform: translateY(0.25rem);
 }
+
+/*==========About me*/
+.about_description {
+    margin-bottom: var(--mb-1-5);
+}
+
+.cv_button:hover .cv_icon {
+    transform: translateY(0.25rem);
+}
+
+.cv_icon {
+    padding-left: 1rem;
+}
+
 /*==============Skills===============*/
 .skills_container {
     row-gap: 0;
@@ -530,7 +547,7 @@ img {
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-    content: '';
+    content: '' !important;
 }
 
 .swiper_btn {
@@ -617,7 +634,12 @@ img {
         padding-top: 5.5rem;
     }
 
+
     #skills {
+        padding-top: 5rem;
+    }
+
+    #aboutme {
         padding-top: 5rem;
     }
 
@@ -628,7 +650,6 @@ img {
 
     #projects {
         padding-top: 5rem;
-
     }
 
     .home_data {
@@ -643,6 +664,7 @@ img {
     .home_blob {
         width: 250px;
     }
+
     .home_scroll {
         padding-left: 0.5rem;
     }

@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navIcon = document.querySelectorAll(".nav_item")
     navIcon.forEach(icon => icon.onclick = () => hideMenu())
+
+    /*========navigation=======================*/
+    const navLink = document.querySelectorAll(".nav_link")
+    navLink.forEach(nav => nav.addEventListener('click', () => navLink.forEach(_nav => _nav !== nav ?
+        _nav.classList.remove("nav_active") : _nav.classList.add("nav_active"))))
+
     /*=========Skills==================*/
     const skillHeader = document.querySelectorAll(".skill_content")
     skillHeader.forEach(header => header.addEventListener('click', () => {
@@ -46,7 +52,30 @@ document.addEventListener("DOMContentLoaded", () => {
             el: '.swiper-pagination',
             clickable: true
         },
-        mousewheel: true,
-        keyboard: true,
     });
+
+    /*=========Scroll===================*/
+    const sections = document.querySelectorAll('section[id]')
+
+    function scrollActive() {
+        const scrollY = window.pageYOffset
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight
+            const sectionTop = current.offsetTop - 70;
+            let sectionId = current.getAttribute('id')
+            if (window.scrollY >= 2750) {
+                document.querySelectorAll(".nav_menu a").forEach(nav => nav.getAttribute("href")
+                === "#contact me" ? nav.classList.add("nav_active") : nav.classList.remove("nav_active"))
+            }
+            else if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                const menu = document.querySelectorAll(".nav_menu a")
+                menu.forEach(nav => nav.getAttribute("href") === "#" + sectionId ? nav.classList.add("nav_active") :
+                    nav.classList.remove("nav_active"));
+            }
+        })
+    }
+
+    window.addEventListener('scroll', scrollActive)
+
 });
