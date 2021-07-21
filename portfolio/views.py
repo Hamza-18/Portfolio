@@ -1,3 +1,4 @@
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 
 
@@ -40,12 +41,16 @@ class Service:
 
 
 class Project:
-    def __init__(self, icon, heading, description, width, height):
+    def __init__(self, icon, heading, description, width, height,subtitle = ""):
         self.icon = icon
         self.heading = heading
         self.description = description
         self.width = width
         self.height = height
+        self.sub_title = subtitle
+
+    def get_sub_title(self):
+        return self.sub_title
 
     def get_icon(self):
         return self.icon
@@ -113,14 +118,37 @@ def create_services():
 
 
 def create_projects():
-    cupshup = Project("/static/projects/cupshup.png", "Food Delivery App", "Native Android App built using Java", 200,
-                      200)
-    java_swing = Project("/static/projects/login.png", "Management System", "Java swing application built for windows",
-                         400, 400)
-    pong = Project("/static/projects/pong.png","Pong","Pong built using Typescript and rxjs library",300,300)
+    cupshup = Project("/static/projects/cupshup/cupshup.png", "Food Delivery App", "Native Android App built using Java", 200,
+                      200,"cupshup")
+    java_swing = Project("/static/projects/booknbed/login.png", "Management System", "Java swing application built for windows",
+                         400, 400,"booknbed")
+    pong = Project("/static/projects/pong/pong.png","Pong","Pong built using Typescript and rxjs library",300,300,"pong")
     return [cupshup, java_swing, pong]
 
+def create_project_dict():
+    cupshup_img =["/static/projects/cupshup/cupshup.png",
+                  "/static/projects/cupshup/menu.png",
+                  "/static/projects/cupshup/sub_menu.png",
+                  "/static/projects/cupshup/cart.png"]
+    cupshup_desc = "Cupshup is a food delivery app built for a restaurant in Lahore, Pakistan. It is a native android app built using Java. " \
+                   "The main functionality of this app is to show menu and take order from the user. Once the order is placed " \
+                   "it is saved in the database which is implemented using google firebase. On admin side the database is" \
+                   " fetched and all the orders are shown. I also implemented push notification for the admin using service." \
+                   " The app also gets the current location of user using GPS and admin can also add promo codes through firebase" \
+                   " which will be shown on the main activity of app."
+    cupshup = Project(cupshup_img,"CupShup",cupshup_desc,200,200,"Food delivery app")
 
+    booknbed_img = ["/static/projects/booknbed/login.png",
+                    "/static/projects/booknbed/dashboard.png",
+                    "/static/projects/booknbed/students.png",
+                    "/static/projects/booknbed/add.png"]
+    booknbed_desc = "This is a hostel management system built for a hostel in Lahore, Pakistan." \
+                    " It is built for windows using Java Swing and  MySQL" \
+                    " It has all the functionalities to add, update, delete for " \
+                    " students and staff. It also notifies when fee is due of a student."
+    booknbed = Project(booknbed_img,"Book & Bed",booknbed_desc,400,400,"Hostel Management System")
+    projects = {"cupshup":cupshup,"booknbed":booknbed}
+    return projects
 my_skills = create_skills_section()
 my_services = create_services()
 my_projects = create_projects()
@@ -134,4 +162,10 @@ def index(request):
     })
 
 def project(request,proj_name):
-    return render(request,"portfolio/project.html")
+    try:
+        my_project = create_project_dict()[proj_name]
+        return render(request,"portfolio/project.html",{
+            "project": my_project
+        })
+    except :
+        return HttpResponseNotFound("Page not found")

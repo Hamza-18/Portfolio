@@ -2,7 +2,7 @@
     width: 100%;
     left: 0;
     top: 0;
-    height: fit-content;
+    height: auto;
     bottom: initial;
     position: fixed;
     z-index: var(--z-fixed);
@@ -12,8 +12,15 @@
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 
 }
+
+#project{
+    margin-top: 5rem;
+}
 .project_description{
     padding: 0 2rem 2rem;
+}
+.project{
+    margin-top: 2rem;
 }
 /*===========Navigation===========*/
 .nav {

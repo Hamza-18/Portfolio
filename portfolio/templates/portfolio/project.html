@@ -24,19 +24,18 @@
             </nav>
         </header>
         <main>
-            <section class="projects section">
-                <span class="section_subtitle">Recent work</span>
+            <section class="projects section" id="project">
+                <h3 class="section_title">{{ project.get_heading }}</h3>
+                <span class="section_subtitle">{{ project.get_sub_title }}</span>
                 <div class="project_container container swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="projects_content grid swiper-slide">
-                            <img class="projects_content-img"
-                                 src="{% static 'projects/cupshup.png' %}">
-                            <div class="portfolio_data">
-                                <h3 class="projects_content-title"> project.get_heading}</h3>
+                        {% for img in project.get_icon %}
+                            <div class="projects_content grid swiper-slide">
+                                <img class="projects_content-img"
+                                     src={{ img }} width={{ project.get_width }} height={{ project.get_height }}>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
-
                     <div class="swiper-button-next">
                         <i class="uil uil-angle-right-b swiper_btn"></i>
                     </div>
@@ -50,11 +49,7 @@
             </section>
         </main>
         <section class="project_description section">
-            <p>THis is my first app THis is my first appTHis is my first appTHis is my first appTHis is my first appTHis
-                is my first appTHis is my first appTHis is my first appTHis is my first appTHis is my first appTHis is
-                my first app
-                THis is my first appTHis is my first appTHis is my first appTHis is my first app
-            </p>
+            <p>{{ project.get_description }} </p>
         </section>
         <script>
             const swiper = new Swiper('.project_container', {
