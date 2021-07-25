@@ -725,3 +725,9 @@ img {
         width: 250px;
     }
 }
+
+@media (pointer: coarse) {
+    .poj_nav{
+        visibility: hidden;
+    }
+}

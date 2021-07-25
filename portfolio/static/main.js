@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             el: '.swiper-pagination',
             clickable: true
         },
+        touch: true
     });
 
     /*=========Scroll===================*/

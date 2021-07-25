@@ -86,16 +86,17 @@
                                             165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403
                                             129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028
                                             -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                    <image class="home_blob-img" x="-40" y="-50" href="{% static 'profile.png' %}"/>
+                                    <image class="home_blob-img" x="-40" y="-40" href="{% static 'profile.png' %}"/>
+                                    {#                                    <image class="home_blob-img" x="-20" y="-20" href="{% static 'progile2.png' %}"/>#}
                                 </g>
                             </svg>
                         </div>
                         <div class="home_data">
                             <h1 class="home_title">Hi I'm Hamza!</h1>
                             <h3 class="home_subtitle">Software Engineer </h3>
-                            <p class="home_description">I am an experienced programmer, working with various
-                                technologies
-                                such as Flutter, Android, Django etc.
+                            <p class="home_description"> It is amazing to see how technology is changing everyday and I want to
+                                be a part of it. My passion about coding has become my profession now, developing applications, websites
+                                and games.
                             </p>
                             <a href="#contact me" class="button button--flex contact-me">
                                 Contact Me <i class="uil uil-message button_icon message_icon"></i>
@@ -117,9 +118,10 @@
                 <span class="section_subtitle">Who I am</span>
                 <div class="about_me container grid ">
                     <div class="about_data">
-                        <p class="about_description">I am a software engineer studying at monash i dont know what to
-                            write but i know this i am
-                            good and i love programming</p>
+                        <p class="about_description">I am a final year student, doing bachelors in computer science from Monash university.
+                        I have developed different skills such as android development, game development etc. While learning these
+                        skills I did several projects to master each skill which I learned. I have also worked with a game studio "Absomech"
+                        which was a great experience and it helped me improve my team work and time management skills.  </p>
                         <a href="#contact me" class="button button--flex cv_button">
                             Download CV<i class="uil uil-import cv_icon"></i>
                         </a>
@@ -216,21 +218,21 @@
                                 <div class="portfolio_data">
                                     <h3 class="projects_content-title">{{ project.get_heading }}</h3>
                                     <p class="projects_content-description"> {{ project.get_description }}</p>
-
-                                    <a href={{ project.get_sub_title }} class="button button--flex button_small projects_btn">
+                                    <a href="{{ project.get_sub_title }}"
+                                       class="button button--flex button_small projects_btn">
                                         View more<i class="uil uil-arrow-right button_icon"></i>
                                     </a>
-
                                 </div>
                                 <div>
                                 </div>
+
                             </div>
                         {% endfor %}
                     </div>
-                    <div class="swiper-button-next">
+                    <div class="swiper-button-next proj_nav">
                         <i class="uil uil-angle-right-b swiper_btn"></i>
                     </div>
-                    <div class="swiper-button-prev">
+                    <div class="swiper-button-prev proj_nav" >
                         <i class="uil uil-angle-left-b swiper_btn"></i>
                     </div>
                     <!-- Add Pagination -->

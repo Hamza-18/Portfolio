@@ -41,7 +41,7 @@ class Service:
 
 
 class Project:
-    def __init__(self, icon, heading, description, width, height,subtitle = ""):
+    def __init__(self, icon, heading, description, width, height, subtitle=""):
         self.icon = icon
         self.heading = heading
         self.description = description
@@ -118,25 +118,33 @@ def create_services():
 
 
 def create_projects():
-    cupshup = Project("/static/projects/cupshup/cupshup.png", "Food Delivery App", "Native Android App built using Java", 200,
-                      200,"cupshup")
-    java_swing = Project("/static/projects/booknbed/login.png", "Management System", "Java swing application built for windows",
-                         400, 400,"booknbed")
-    pong = Project("/static/projects/pong/pong.png","Pong","Pong built using Typescript and rxjs library",300,300,"pong")
-    return [cupshup, java_swing, pong]
+    cupshup = Project("/static/projects/cupshup/cupshup.png", "Food Delivery App",
+                      "Native Android App built using Java", 200,
+                      200, "cupshup")
+    java_swing = Project("/static/projects/booknbed/login.png", "Management System",
+                         "Java swing application built for windows",
+                         400, 400, "booknbed")
+    pong = Project("/static/projects/pong/pong.png", "Pong", "Pong built using Typescript and rxjs library", 300, 300,
+                   "pong")
+
+    fps = Project("/static/projects/fps/FPS.png", "FPS Controller", "FPS controller built in unity using C#.", 400, 400,
+                  "fps")
+
+    return [cupshup, java_swing, pong, fps]
+
 
 def create_project_dict():
-    cupshup_img =["/static/projects/cupshup/cupshup.png",
-                  "/static/projects/cupshup/menu.png",
-                  "/static/projects/cupshup/sub_menu.png",
-                  "/static/projects/cupshup/cart.png"]
+    cupshup_img = ["/static/projects/cupshup/cupshup.png",
+                   "/static/projects/cupshup/menu.png",
+                   "/static/projects/cupshup/sub_menu.png",
+                   "/static/projects/cupshup/cart.png"]
     cupshup_desc = "Cupshup is a food delivery app built for a restaurant in Lahore, Pakistan. It is a native android app built using Java. " \
                    "The main functionality of this app is to show menu and take order from the user. Once the order is placed " \
                    "it is saved in the database which is implemented using google firebase. On admin side the database is" \
                    " fetched and all the orders are shown. I also implemented push notification for the admin using service." \
                    " The app also gets the current location of user using GPS and admin can also add promo codes through firebase" \
                    " which will be shown on the main activity of app."
-    cupshup = Project(cupshup_img,"CupShup",cupshup_desc,200,200,"Food delivery app")
+    cupshup = Project(cupshup_img, "CupShup", cupshup_desc, 200, 200, "Food delivery app")
 
     booknbed_img = ["/static/projects/booknbed/login.png",
                     "/static/projects/booknbed/dashboard.png",
@@ -146,9 +154,30 @@ def create_project_dict():
                     " It is built for windows using Java Swing and  MySQL" \
                     " It has all the functionalities to add, update, delete for " \
                     " students and staff. It also notifies when fee is due of a student."
-    booknbed = Project(booknbed_img,"Book & Bed",booknbed_desc,400,400,"Hostel Management System")
-    projects = {"cupshup":cupshup,"booknbed":booknbed}
+    booknbed = Project(booknbed_img, "Book & Bed", booknbed_desc, 400, 400, "Hostel Management System")
+
+    pong_img = ["/static/projects/pong/pong.png",
+                "/static/projects/pong/pong1.png",
+                "/static/projects/pong/pong2.png"]
+    pong_desc = "Pong is a browser game which can run on all browsers such as safari, chrome etc. It is built using pure " \
+                "functional programming in Typescript and RxJS library. The UI consists of a SVG component which has other" \
+                " components pedal, ball, boundary etc. It makes use of observables from rxjs library to update UI each time." \
+                " Moreover the game makes use of only immutable objects to avoid side effects."
+    pong = Project(pong_img, "Pong", pong_desc, 400, 400, "Browser game")
+
+    fps_img = ["/static/projects/fps/FPS.png",
+               "/static/projects/fps/FPS1.png",
+               "/static/projects/fps/FPS2.png"]
+
+    fps_desc = "This is a First Person Shooting controller built for a hunting game. I built this controller" \
+               " while I was working at Absomech game studio as in intern. This controller has all the features such as" \
+               " shoot, reload, aim. Moreover it also has the slow motion effect which is triggered when last animal is killled" \
+               " which can be seen in the last screenshot."
+    fps = Project(fps_img,"FPS Controller",fps_desc,400,400)
+    projects = {"cupshup": cupshup, "booknbed": booknbed, "pong": pong, "fps":fps}
     return projects
+
+
 my_skills = create_skills_section()
 my_services = create_services()
 my_projects = create_projects()
@@ -161,11 +190,12 @@ def index(request):
         "projects": my_projects
     })
 
-def project(request,proj_name):
+
+def project(request, proj_name):
     try:
         my_project = create_project_dict()[proj_name]
-        return render(request,"portfolio/project.html",{
+        return render(request, "portfolio/project.html", {
             "project": my_project
         })
-    except :
+    except:
         return HttpResponseNotFound("Page not found")
