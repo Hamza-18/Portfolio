@@ -1,0 +1,5 @@
+Django~=3.2.4
+dj-config-url~=0.1.1
+decouple~=0.0.7
+gunicorn~=19.9.0
+django-heroku
