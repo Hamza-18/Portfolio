@@ -1,12 +1,26 @@
+.header {
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: auto;
+    bottom: initial;
+    position: fixed;
+    z-index: var(--z-fixed);
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #122c3b;
+    color: white;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
 
 #project{
     margin-top: 5rem;
 }
 .project_description{
-    padding: 0 2rem 2rem;
+    padding: 0 5rem 4rem 5rem;
 }
 .project{
     margin-top: 2rem;
+    align-items: center;
 }
 /*===========Navigation===========*/
 .nav {
@@ -21,19 +35,15 @@
 .nav_list {
     display: flex;
     column-gap: 2rem;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .nav_icon {
     font-size: 2rem;
 }
-
+.nav, .nav_link{
+    font-size: 2rem !important;
+}
 .swiper-button-next, .swiper-button-prev {
     color: #0f6066 !important;
-}
-
-@media screen and (max-width: 400px){
-    .body{
-        font-size: 20px;
-    }
 }
