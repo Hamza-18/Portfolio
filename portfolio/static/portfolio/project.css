@@ -46,13 +46,8 @@
     color: #0f6066 !important;
 }
 
-@media screen and (max-width:420px ){
+@media screen and (max-width: 400px){
     .body{
-        font-size: 3rem;
-    }
-
-    .proj_im{
-        width: 500px;
-        height: 500px;
+        font-size: 20px;
     }
 }

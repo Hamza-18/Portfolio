@@ -726,7 +726,7 @@ img {
     }
 }
 
-@media (pointer: coarse) {
+@media handheld {
     .poj_nav{
         visibility: hidden;
     }
