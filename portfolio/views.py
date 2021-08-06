@@ -170,7 +170,7 @@ def create_project_dict():
                "/static/projects/fps/FPS2.png"]
 
     fps_desc = "This is a First Person Shooting controller built for a hunting game. I built this controller" \
-               " while I was working at Absomech game studio as in intern. This controller has all the features such as" \
+               " while I was working at Gunfire game studio as an intern. This controller has all the features such as" \
                " shoot, reload, aim. Moreover it also has the slow motion effect which is triggered when last animal is killled" \
                " which can be seen in the last screenshot."
     fps = Project(fps_img,"FPS Controller",fps_desc,400,400)
