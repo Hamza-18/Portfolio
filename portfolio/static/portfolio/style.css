@@ -552,7 +552,7 @@ img {
 
 .swiper_btn {
     color: var(--icon-color);
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 
 .swiper_btn:hover {

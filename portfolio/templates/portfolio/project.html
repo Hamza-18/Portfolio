@@ -27,7 +27,7 @@
             <section class="projects section" id="project">
                 <h3 class="section_title">{{ project.get_heading }}</h3>
                 <span class="section_subtitle">{{ project.get_sub_title }}</span>
-                <div class="project_container container swiper-container">
+                <div class="project_container container swiper-container swiper">
                     <div class="swiper-wrapper">
                         {% for img in project.get_icon %}
                             <div class="projects_content grid swiper-slide">
