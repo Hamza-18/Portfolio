@@ -4,5 +4,8 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/test3.txt
+/test1.txt
+/test.txt
 # Editor-based HTTP Client requests
 /httpRequests/
